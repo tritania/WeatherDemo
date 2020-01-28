@@ -29,7 +29,7 @@ const monthNames = [
 ];
 
 const monthNamesAbv = [
-  //add month names to make table generation easier
+  //shorthen month names to make graph generation easier
   'J',
   'F',
   'M',
@@ -75,7 +75,7 @@ export default class WeatherDemo extends Component {
         /* find min temp */
         if (
           months[j][k]['Min Temp Flag'] !== 'M' &&
-          min > months[j][k]['Min Temp (°C)']
+          min > months[j][k]['Min Temp (°C)'] //pull the actual data out
         ) {
           //make sure we dont have M flag for missing for any values, skip if we do
           min = months[j][k]['Min Temp (°C)'];
@@ -283,7 +283,7 @@ export default class WeatherDemo extends Component {
                 textAlign: 'center',
                 padding: 20,
               }}>
-              Percipitation per Month (mm) in Saint John, NB, 2018
+              Precipitation per Month (mm) in Saint John, NB, 2018
             </Text>
             <VictoryChart theme={VictoryTheme.material}>
               <VictoryAxis
